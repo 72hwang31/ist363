@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {background-color:#e38e49;
+            color:#0a3981;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .flexbox{background-color: #d4ebf8;
+            margin:5px;
+            padding:50px;
+            border-radius:5px;
+            flex-wrap:wrap;
+        }
+        h1,p {padding-bottom:5px;}
+        strong {color:#e38e49;}
+        .labimages {display:flex;
+            flex-direction:row;
+            flex-wrap:wrap;
+        }
+        img{max-width:100%;
+            height:auto;
+        }
+        @media(max-width:800px) {
+            img{max-width:50%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="flexbox">
+        <h1>Harvey Wang</h1>
+        <p>Something <strong>personal</strong> is that my family is from China. Something <strong>professional</strong> is that I am a senior. And something <strong>peculiar</strong> is that I like to look up old books.</p>
+        <div class="labimages">
+            <img src="file.jpg" alt="photo of myself" width="420" height="480">
+            <img src="file.png" alt="map of china" width="420" height="480">
+            <img src="Resize image project.png" alt="portrait of students" width="420" height="480">
+            <img src="file (2).jpg" alt="scan of old chinese text" width="420" height="480">
+        </div>
+    </div>
+</body>
+</html>
