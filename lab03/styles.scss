@@ -1,0 +1,68 @@
+@import "partials/reset";
+@import "partials/variables";
+@import "partials/mixins";
+
+
+.textlocation {
+    text-align:center;
+}
+.outline {
+    border:1px solid black;
+}
+.secondoutline {
+    border:1px solid #e89b6a;
+}
+header {
+    @include orangebackground;
+    @extend .textlocation;
+}
+.newrecipebox {
+    @include print;
+    @include flexrow;
+}
+.newsletterbox {
+    @extend .textlocation;
+    @include corners;
+}
+.newsletterbox {div {form {input {@extend .secondoutline;}}}}
+.pageimage {
+    margin:0% 10%;
+    max-width:90%;
+    @include flexrow;
+    @include corners;
+}
+.aboutbox {
+    @extend .textlocation;
+}
+.button {
+    display:inline-block;
+    padding:5px;
+    @include orangebackground;
+    @include corners;
+}
+h2 {
+    @include print;
+}
+
+.oldrecipebox {
+    @include print;
+    @include flexrow;
+}
+footer {
+    @extend .textlocation;
+}
+.example, .exampletitle{
+    @include imagebox;
+    @include corners;
+    @extend .textlocation;
+}
+.example {
+    @extend .outline;
+}
+nav {
+    @include flexrow;
+}
+nav {a{
+    flex:1;
+    text-align:center;
+}}
