@@ -2,12 +2,15 @@
 @import "lab3partials/variables";
 @import "lab3partials/mixins";
 
-
+body {
+    font-family:$myfont
+}
+img {
+    max-width:100%;
+    @include corners;
+}
 .textlocation {
     text-align:center;
-}
-.outline {
-    border:1px solid black;
 }
 .secondoutline {
     border:1px solid #e89b6a;
@@ -15,14 +18,17 @@
 header {
     @include orangebackground;
     @extend .textlocation;
+    padding:10px;
 }
 .newrecipebox {
-    @include print;
+    color:$mycolor4;
     @include flexrow;
 }
 .newsletterbox {
     @extend .textlocation;
     @include corners;
+    background-color:$bgcolor3;
+    margin:10px;
 }
 .newsletterbox {div {form {input {@extend .secondoutline;}}}}
 .pageimage {
@@ -41,15 +47,18 @@ header {
     @include corners;
 }
 h2 {
-    @include print;
+    color:$mycolor4;
 }
 
 .oldrecipebox {
-    @include print;
+    color:$mycolor4;
     @include flexrow;
 }
 footer {
     @extend .textlocation;
+    background-color:$mybgcolor;
+    color:$mycolor2;
+    padding:10px;
 }
 .example, .exampletitle{
     @include imagebox;
@@ -57,12 +66,18 @@ footer {
     @extend .textlocation;
 }
 .example {
-    @extend .outline;
+    @include boxshadows;
+    margin:5px;
 }
 nav {
     @include flexrow;
+    padding:10px;
+    transition:transform 0.1s;
 }
 nav {a{
     flex:1;
     text-align:center;
+}}
+nav {a:hover{
+    transform:scale(1.5)
 }}

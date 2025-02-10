@@ -1,0 +1,201 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 7px;
+}
+
+.textlocation, .example, .exampletitle, footer, .aboutbox, .newsletterbox, header {
+  text-align: center;
+}
+
+.secondoutline, .newsletterbox div form input {
+  border: 1px solid #e89b6a;
+}
+
+header {
+  background-color: #e89b6a;
+  color: white;
+  padding: 10px;
+}
+
+.newrecipebox {
+  color: #e2625c;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.newsletterbox {
+  border-radius: 7px;
+  background-color: #e4fdc3;
+  margin: 10px;
+}
+
+.pageimage {
+  margin: 0% 10%;
+  max-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 7px;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px;
+  background-color: #e89b6a;
+  color: white;
+  border-radius: 7px;
+}
+
+h2 {
+  color: #e2625c;
+}
+
+.oldrecipebox {
+  color: #e2625c;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer {
+  background-color: #8ae2c8;
+  color: white;
+  padding: 10px;
+}
+
+.example, .exampletitle {
+  flex: 1;
+  width: 10%;
+  min-width: 240px;
+  height: auto;
+  border-radius: 7px;
+}
+
+.example {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 5px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+  transition: transform 0.1s;
+}
+
+nav a {
+  flex: 1;
+  text-align: center;
+}
+
+nav a:hover {
+  transform: scale(1.5);
+}/*# sourceMappingURL=styles.css.map */
