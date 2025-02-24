@@ -10,6 +10,10 @@
 </head>
 <body>
     <script src="../bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const collapseElementList = document.querySelectorAll('.collapse')
+      const collapseList = [...collapseElementList].map(collapseEl => new bootstrap.Collapse(collapseEl))
+    </script>
     <header>
         <nav class="navbar navbar-expand-sm bg-dark text-white">
             <div class="container">
@@ -87,8 +91,8 @@
     </div>
     <br>
     <div class="bg-light container p-4">
-      <h3 class="text-center text-dark"><i class="bi bi-stars"></i>Customer Reviews</h3>
-      <div class="row gx-5">
+      <h3 class="text-center text-dark"><i class="bi-stars"></i>Customer Reviews</h3>
+      <div class="px-4"><div class="row gx-5">
         <div class="card col-sm">
           <div class="card-body">
             <h5 class="card-title">Amazing Work!</h5>
@@ -116,7 +120,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></div>
     </div>
     <br>
     <h2 class="container text-dark">FAQs</h2>
@@ -161,13 +165,34 @@
     <br>
     <div class="container bg-light">
       <h2 class="text-center text-dark">Get in Touch</h2>
-      <div class="text-center">Questions to ask? Fill out the form to contact me directly.</div>
-      <form>
-        <div class="input-group">
-          <label for="inputEmail" class="form-label">Email Address:</label>
-          <span class="input-group-text" id="emailHelp"><i class="envelope-fill"></i></span>
-          <input type="email" id="inputEmail" class="form-control" placeholder="e.g.mario@example.com" aria-label="email" aria-describedby="emailHelp">
+      <div class="text-center">Questions to ask? Fill out the form to contact me directly...</div>
+      <form class="container mt-5">
+        <label for="inputEmail" class="form-label container">Email Address:</label>
+        <div class="input-group mb-3 container">
+          <span class="input-group-text"><i class="bi-envelope-fill"></i></span>
+          <input type="email" id="inputEmail" class="form-control" placeholder="e.g.mario@example.com" aria-label="email">
+          <span class="input-group-text"><i class="bi-question-circle"></i></span>
         </div>
+        <label for="inputText" class="form-label container">Name:</label>
+        <div class="input-group mb-3 container">
+          <span class="input-group-text"><i class="bi-person-fill"></i></span>
+          <input type="text" id="inputText" class="form-control" placeholder="e.g.Mario" aria-label="text">
+          <span class="input-group-text"><i class="bi-question-circle"></i></span>
+        </div>
+        <label for="inputQuestion" class="form-label container">What is your question about?</label>
+        <div class="input-group mb-3 container">
+          <span class="input-group-text"><i class="bi-chat-right-dots-fill"></i></span>
+          <select class="form-select" id="inputQuestion" aria-label="Default select example">
+            <option selected>Pricing Query</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="mb-3 container">
+          <textarea class="form-control" id="inputTextarea" rows="3" placeholder="Your query..."></textarea>
+        </div>
+        <div class="text-center pb-3"><button type="submit" class="btn btn-secondary">Submit</button></div>
       </form>
     </div>
     <br>
