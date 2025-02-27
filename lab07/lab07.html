@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //#1
+        let favNumber = 3;
+        console.log("My favorite number is" + favNumber +".")
+    </script>
+    <script>
+        //#2
+        let favoriteFoods = ["Peanuts", "Steak", "Corn", "Beans"];
+        favoriteFoods.push("Rice");
+        console.log(favoriteFoods);
+        //#3
+        for (let i=0; i<favoriteFoods.length; i++){
+            console.log("Favorite Food" + (i+1) +": "+favoriteFoods[i]);
+        }
+    </script>
+    <script>
+        //#4
+        for (let i=0; i<favoriteFoods.length; i++){
+            if (i=1){
+                i++;
+            }
+            else if(i=0,2,3,4) {
+                console.log("Favorite Food" + (i+1) +": "+favoriteFoods[i]);
+            }
+        }
+    </script>
+    <script>
+        //#5
+        let book={
+            title: "One Hundred Years of Solitude",
+            author: "Gabriel Marquez",
+            yearPublished: 1967,
+            isAvailable: true
+        };
+        console.log(book.title + " by" + book.author)
+        if (book.isAvailable==true){
+            console.log("This book is available for checkout.")
+        }
+        else if(book.isAvailable==false){
+            console.log("Sorry, this book is currently checked out.")
+        }
+    </script>
+    <script>
+        //#6
+        let x=2;
+        while (x<=20){
+            console.log(x);
+            x=x+2;
+        }
+    </script>
+</body>
+</html>
