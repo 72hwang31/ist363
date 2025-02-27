@@ -23,12 +23,11 @@
     </script>
     <script>
         //#4
-        for (let i=0; i<favoriteFoods.length; i++){
-            if (i=1){
-                i++;
-            }
-            else if(i=0,2,3,4) {
-                console.log("Favorite Food" + (i+1) +": "+favoriteFoods[i]);
+        for (let i=0; i<(favoriteFoods.length-1); i++){
+            if (i<1){
+                console.log("Favorite Food"+(i+1)+": "+favoriteFoods[i]);
+            } else {
+                console.log("Favorite Food" + (i+2) +": "+favoriteFoods[(i+1)]);
             }
         }
     </script>
@@ -54,6 +53,15 @@
         while (x<=20){
             console.log(x);
             x=x+2;
+        }
+    </script>
+    <script>
+        //#7
+        let randomNumber = Math.floor(Math.random()*10)+1;
+        if (randomNumber<=6){
+            console.log(randomNumber);
+        } else{
+            console.log(randomNumber-4);
         }
     </script>
 </body>
