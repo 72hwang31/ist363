@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="inputtext">Enter your dog's age (in human years).</label>
+        <input type="text" name="dyears" id="inputtext" class="dyears">
+        <input type="submit" value="Calculate" id="calculator">
+    </form>
+    <p>The age of you dog is <span id="age">?</span> years old.</p>
+    <script>
+        document.getElementById('calculator').addEventListener("click", ()=>{
+            let time = document.getElementsByTagName('input')[0].value;
+            console.log(time);
+            document.getElementById('age').innerText = dogAge(time);
+            event.preventDefault();
+        })
+        function dogAge(years){
+            return 7*years;
+        }
+    </script>
+</body>
+</html>
