@@ -4,7 +4,7 @@ endpoint = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.4
             if (response != 'error'){
                 const myData = JSON.parse(response);
                 console.log(myData);
-                browserData1 = myData.current.precipitation +" " + myData.current_units.precipitation;
+                browserData1 = myData.current.precipitation;
                 browserData2 = myData.current.temperature_2m + " " + myData.current_units.temperature_2m;
                 browserData3 = '';
                 if (myData.current.cloud_cover < 50){
