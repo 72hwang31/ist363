@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2</title>
+    <style>
+        body{
+            background-color:bisque;
+        }
+        header {
+            background-color:orange;
+        }
+        nav {
+            text-align:center;
+        }
+        h1, h2{
+            text-align:center;
+            color:darkblue;
+        }
+        .flexbox{
+            display:flex;
+            flex-wrap:wrap;
+            text-align:center;
+            flex-direction:row;
+        }
+        @media (max-width:800px){
+            .flexbox{
+                flex-direction:column;
+            }
+        }
+        .flex1{
+            flex:3;
+            flex-wrap:wrap;
+            margin-left:50px;
+            margin-right:50px;
+        }
+        .flex2{
+            flex:1;
+        }
+        table, th, td {
+            border:1px solid black;
+            margin:0 auto;
+            text-align:center;
+            padding:5px;
+        }
+        footer {
+            background-color:blue;
+            color:white;
+            padding:10px;
+            display:flex;
+        }
+        footer span{
+            flex:1;
+        }
+        .info{
+            text-align:right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Project 2</h1>
+        <nav>
+            <span><a href="#main">Main</a></span>
+            <span><a href="#table">Data</a></span>
+        </nav>
+    </header>
+    <div class="flexbox" id="main">
+        <div class="flex1">
+            <h2>Movies Popular In China</h2>
+            <div id="data3"></div>
+        </div>
+        <div class="flex2">
+            <h2>Chinese Movies News & Trailers</h2>
+            <div id="data2"></div>
+        </div>
+    </div>
+    <br>
+    <h2 id="table">Data</h2>
+    <table id="data"></table>
+    <br>
+    <div id="data2"></div>
+    <footer>
+        <span>Harvey Wang</span>
+        <span class="info">&copy;Maoyan 2025</span>
+    </footer>
+    <script>
+        endpoint = 'https://apis.netstart.cn/maoyan/index/movieOnInfoList';
+        async function gotFile() {
+            let myPromise1 = new Promise(function(resolve){
+                let req = new XMLHttpRequest();
+                req.open('GET', endpoint);
+                req.onload = function(){
+                    if(req.status === 200){
+                        resolve(req.responseText);
+                    }else {
+                        resolve("Error");
+                    }
+                };
+                req.send();
+            });
+            const myData = JSON.parse(await myPromise1);
+            console.log(myData);
+            let browserData='<tr><td>Movie</td><td>Release Date</td><td>Wish to See</td></tr>';
+            let browserData3='';
+            for (i=0;i<9;i++){
+                browserData=browserData+'<tr><td>'+myData.movieList[i].nm+'</td>'+'<td>'+myData.movieList[i].rt+'</td>'+'<td>'+myData.movieList[i].wish+'</td></tr>';
+                browserData3=browserData3+'<img src="'+myData.movieList[i].img+'" width="150" height="180">';
+            }
+            document.getElementById('data').innerHTML=browserData;
+            document.getElementById('data3').innerHTML=browserData3;
+        }
+        gotFile();
+
+        endpoint2 = 'https://apis.netstart.cn/maoyan/video/0';
+        async function getFile() {
+            let myPromise = new Promise(function(resolve){
+                let req = new XMLHttpRequest();
+                req.open('GET', endpoint2);
+                req.onload = function(){
+                    if(req.status === 200){
+                        resolve(req.responseText);
+                    }else {
+                        resolve("Error");
+                    }
+                };
+                req.send();
+            });
+            const myData2 = JSON.parse(await myPromise);
+            console.log(myData2);
+            let browserData2='';
+            for (i=0;i<5;i++){
+                browserData2 = browserData2+'<a href="'+myData2.data.feeds[i].video.url+'">Video Links</a>'+'<br>';
+            }
+            document.getElementById('data2').innerHTML=browserData2;
+        }
+        getFile();
+    </script>
+</body>
+</html>
